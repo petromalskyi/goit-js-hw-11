@@ -57,36 +57,39 @@ function createMarkup(array) {
   loaderEl.remove();
 
   const markup = array.reduce(
-    (html, hit) =>
+    (
+      html,
+      { largeImageURL, previewURL, tags, likes, views, comments, downloads },
+    ) =>
       html +
       `
       <li class="gallery-item">
-        <a class="gallery-link" href="${hit.largeImageURL}">
+        <a class="gallery-link" href="${largeImageURL}">
             <img
-              class="gallery-image"
-              src="${hit.previewURL}"
-              alt="${hit.tags}"
-               width="360" 
-               height="200"
-              ;
+            class="gallery-image"
+            src="${previewURL}"
+            alt="${tags}"
+            width="360"
+            height="200"
+            ;
             />
             <div class="gallery-info">
               <div class="gallery-box">
                 <h3 class="gallery-title">likes</h3>
-                <p class="gallery-text">${hit.likes}</p>
+                <p class="gallery-text">${likes}</p>
                 <!--hit.likes -->
               </div>
               <div class="gallery-box">
                 <h3 class="gallery-title">views</h3>
-                <p class="gallery-text">${hit.views}</p>
+                <p class="gallery-text">${views}</p>
               </div>
               <div class="gallery-box">
                 <h3 class="gallery-title">comments</h3>
-                <p class="gallery-text">${hit.comments}</p>
+                <p class="gallery-text">${comments}</p>
               </div>
               <div class="gallery-box">
                 <h3 class="gallery-title">downloads</h3>
-                <p class="gallery-text">${hit.downloads}</p>
+                <p class="gallery-text">${downloads}</p>
               </div>
             </div>
          </a>

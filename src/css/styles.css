@@ -49,6 +49,7 @@ button {
 
 button:hover {
   background-color: #6c8cff;
+  cursor: pointer;
 }
 
 .loader {
